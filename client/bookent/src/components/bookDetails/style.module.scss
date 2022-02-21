@@ -1,0 +1,725 @@
+@import url('https://fonts.googleapis.com/css2?family=NTR&family=Offside&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bage:#FFD79A;
+    --cyan:#88C0C2;
+    --ntr:'NTR', sans-serif;
+    --offside:'Offside', cursive;
+}
+.themelight{
+    --black:#202020;
+    --back:#fafafa;
+    --white:#fff;
+    --white2:#fff;
+    --offwhite:#f7f7f7;
+    --shadow:0 .37rem .9rem -3px rgb(0 0 0 / 20%);
+}
+.themedark{
+    --black:#fff;
+    --white:#202020;
+    --white2:#3d3d3d;
+    --back:#202020;
+    --offwhite:#3d3d3d;
+    --shadow:0 .37rem .9rem -3px rgba(241, 241, 241, 0.644);
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    margin:0 10vw auto;
+    text-align: center;
+    font-family: var(--ntr);
+
+
+// books list div
+
+
+.books{
+    padding: 3vw;
+
+        .book{
+            width: 80%;
+            height: 100%;
+            border-radius: 1em;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin: 0 auto;
+            color:var(--black);
+            background:var(--white2);
+            
+            .upperdetails{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .details{
+                    align-self: stretch;
+                    flex: 1;
+                    text-align: left;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    align-content: center;
+                    gap: 2vw;
+                    box-shadow: 8px -15px 10px rgba(128, 128, 128, 0.384);
+                    z-index: 2;
+                    border-top-right-radius: 2.5em;
+                    padding: 6% 3% 0 9% ;
+                    position: relative;
+                    line-height: 250%;
+                    backdrop-filter: blur(5px);
+
+                    .bookname{
+                        font-size: 2.5vw;
+                    }
+                    .bookgen{font-size: 1.5vw;}
+                    .booktime{font-size: 1.5vw;}
+
+                    .love{
+                        width: 3vw;
+                        height: 3vw;
+                        float: right;
+                        margin: 0;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: white;
+                        border: 10px solid white;
+                        position: absolute;
+                        right: -1.5vw;
+                        transform: translateY(25vh);
+                        border-radius: 5em;
+                        box-shadow: 0 0 10px rgba(128, 128, 128, 0.288);
+
+                        
+                        input{
+                            display: inline;
+                            width: 1.5vw;
+                            height: 1.5vw;
+                            opacity: 0;
+                            cursor: pointer;
+                            z-index: 3;
+                            &:hover + img{
+                                filter: brightness(1);
+                            }
+                            &:checked + img {
+                                filter: brightness(1);
+                                background-image: url(../assets/lover.svg);
+                              }
+                        }
+                        img{
+                            display: inline;
+                            position: absolute; 
+                            width: 1.5vw;
+                            height: 1.5vw;
+                            background-repeat: no-repeat;
+                        }
+        
+                    }
+
+                    .bookowner{font-size: 1.3vw;}
+                    .booknum{
+                        width: 70%;
+                        height: 100%;
+                        min-height: 3em;
+                        border: .1em solid;
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        border-radius: 10px;
+                        background-color: rgb(154, 205, 223);
+                        font-size: 1.2vw;
+                        font-weight: bolder;     
+                        cursor: pointer;      
+                        overflow: hidden;    
+                        transition: all .5s ease-in;
+                        &:hover{
+                            box-shadow: 0 0 10px var(--bage);
+                            border: transparent;
+                        }
+                        &:active{
+                            transform: scale(.9);
+                        }
+                        div{
+                            align-self: stretch;
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            background-color: rgb(146, 195, 211);
+                            margin-left: 2em;
+                            flex: .5;
+                            img{
+                                 width: 1.5vw;
+                            }
+                        }
+                    }
+
+                    .contacts{
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        gap: 1em;
+
+                        .chat{
+                            align-self: stretch;
+                            background:rgb(221, 183, 11);
+                            padding: 0 1em;
+                            border-radius: 5px;
+                            filter: brightness(1.2);
+                            border: none;
+                            cursor: pointer;
+                            &:active{
+                                border: solid .1em;
+                            }
+                            img{
+                                width: 1.5vw;
+                           }
+                        }
+
+                        
+                        .report{
+                            background:rgb(212, 91, 91);
+                            padding: .5em;
+                            border-radius: 5px;
+                            filter: brightness(1.2);
+                            border: none;
+                            align-self: stretch;
+                            img{
+                                width: 1.3vw;
+                           }
+                        }
+                    }
+                }
+
+                .bookcover{
+                    width: 100%;
+                    height: 100%;
+                    max-height: 60vw;
+                    flex: 1.3;
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+
+            .lowerdetails{
+                width: 100%;
+                text-align: left;
+                margin: 5%;
+
+                .bookdesc{
+                    width: 90%;
+                    word-wrap: break-word;
+                    margin: 0 auto;
+                    font-size: 2vw;
+                }
+
+                .ownerBooks{
+                    width: 97%;
+                    min-height: 31vw;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill,minmax(35%,1fr));
+                    grid-auto-flow: column;
+                    grid-auto-columns: minmax(35%,1fr);               
+                    align-items: center;
+                    position: relative;
+                    gap: 1vw;
+                    margin: 1vw;
+                    overflow-x: auto;
+                    h4{
+                        top: 0%;
+                        left: 3%;
+                        position: absolute;
+                        font-size: 1.5vw;
+                    }
+
+                    .book{
+                        width: 90%;
+                        height: 80%;
+                        border-radius: 1em;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        padding: 1em 0 0 ;
+                        display: flex;
+                        overflow: hidden;
+                        animation: book .5s ease-out .1s  forwards;
+                        @keyframes book {
+                            0%{
+                                opacity: 0;
+                                transform: scale(.7);
+                            }
+                            100%{
+                                opacity: 1;
+                                transform: scale(1);
+                            }
+                        }
+            
+                        &:hover .bookdetails{
+                            transform: translateY(125%);
+                        }
+                        .bookdetails{
+                            width: 100%;
+                            height:45%;
+                            text-align: left;
+                            background-color: rgba(112, 112, 112, 0.411);
+                            padding: .1em 1em;
+                            align-self: flex-end;
+                            transform: translateY(250%);
+                            transition: all .5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+                            backdrop-filter: blur(10px);
+                             &:hover{
+                                 transform: translateY(125%);
+                             }
+                            a{
+                                width: max-content;
+                            }
+                            .bookname{
+                                width:max-content;
+                                font-weight: bold;
+                                font-size: 1.6vw;
+                                color: var(--black);
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                overflow: hidden;
+                           }
+                           .love{
+                            width: 2em;
+                            height: 2em;
+                            float: right;
+                            margin: -14% 8% 0 ;
+                
+                            input{
+                                display: inline;
+                                position: relative;
+                                width: 2em;
+                                height: 2.1em;
+                                opacity: 0;
+                                cursor: pointer;
+                                transition: 0.1s all linear;
+                                z-index: 3;
+                                &:hover + img{
+                                    filter: brightness(1);
+                                }
+                        
+                                &:checked + img {
+                                    filter: brightness(1);
+                                    background-image: url(../assets/lover.svg);
+                                  }
+                            }
+                            img{
+                                display: inline;
+                                position: absolute; 
+                                transform: translate(-100%);           
+                                width: 2vw;
+                                height: 2vw;                
+                                filter: brightness(3);
+            
+                           }
+            
+                           }
+                           .bookgen{
+                               font-size: 1.3vw;
+                               color: var(--black);
+                               text-overflow: ellipsis;
+                               white-space: nowrap;
+                               overflow: hidden;
+            
+                           }
+                            .bookdesc{
+                               font-size: 1.2vw;
+                               color: var(--black);
+                               text-overflow: ellipsis;
+                               white-space: nowrap;
+                               overflow: hidden;
+                           }
+                       }
+                   }
+            
+            
+                }
+            }
+       }
+   }
+
+
+   
+
+
+
+
+
+
+
+
+   .modalOverley {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(#000, 0.6);
+    opacity: 1;
+    visibility: visible;
+    backface-visibility: hidden;
+    transition: opacity 0.6s cubic-bezier(.55,0,.1,1), visibility 0.6s cubic-bezier(.55,0,.1,1);
+
+  }
+
+
+/**
+ * Modal
+ */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 .3em;
+  background-color: #fff;
+  width: 80%;
+  max-width: 40rem;
+  min-height: 15rem;
+  padding: 1rem;
+  border-radius: 3px;
+  opacity: 1;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(#000, 0.1);
+  backface-visibility: hidden;
+  transform: scale(1.2);
+  transition: all 0.6s cubic-bezier(.55,0,.1,1);
+
+  .closeModal {
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    right: 15px;
+    opacity: 1;
+    backface-visibility: hidden;
+    transition: opacity 0.6s  cubic-bezier(.55,0,.1,1), transform 0.6s cubic-bezier(.55,0,.1,1);
+    transition-delay: .3s;
+    
+     
+    svg {
+        width: 1.75em;
+        height: 1.75em;
+      }
+  } // close modal
+  
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    
+    
+    .closeModal {
+      transform: translateY(10px);
+      opacity: 1;
+    }
+  }
+
+
+  form{
+      width: 100%;
+      height: 11em;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      align-self: flex-end;
+      
+      textarea{
+          width: 100%;
+          height: 10em;
+          resize: none;
+          padding: 5px;
+      }
+      input{
+          height: 2rem;
+      }
+  }
+}
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+///// media  queries
+
+
+
+
+
+
+
+
+
+
+
+@media screen and(max-width:1024px) {
+    
+
+    .main{
+        margin: 0 auto;
+        background: linear-gradient( #88c0c2a4, transparent 70%);
+
+
+        .books{
+            height: 100%;
+            border-radius: 2rem;
+            z-index: 1;
+            margin: 0;
+            padding-top: 10%;
+
+            .book{
+                width: 90%;
+                height: auto;
+                border-radius: 1em;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                overflow: hidden;
+                box-shadow: 0 0 2em var(--offwhite);
+                margin: 0 auto;
+                
+                .upperdetails{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column-reverse;
+                    align-items: center;
+    
+                    .details{
+                        width: 100%;
+                        height: 100%;
+                        flex: 1;
+                        text-align:center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-content: center;
+                        gap: 0;
+                        box-shadow: 0 -10px 10px rgba(128, 128, 128, 0.384);
+                        z-index: 2;
+                        border-top-right-radius: 2.5em;
+                        border-top-left-radius: 2.5em;
+                        padding: 3%;
+                        position: relative;
+                        line-height: 8vmin;
+                        padding: 3vw;
+                        background: linear-gradient(var(--offwhite), transparent);
+                        .bookname{
+                            font-size: 5vw;
+                            margin-top: 1em;
+                        }
+                        .bookgen{font-size: 3.5vw;}
+                        .booktime{font-size: 3.5vw;}
+    
+                        .love{
+                            width: 4vw;
+                            height: 4vw;
+                            float: none;
+                            margin: 0;
+                            text-align: center;
+                            display: flex;
+                            align-items: center;
+                            background: white;
+                            border: 10px solid white;
+                            position: absolute;
+                            border-radius: 5em;
+                            box-shadow: 0px -8px 10px rgba(128, 128, 128, 0.575);
+                            top: -1vmax;
+                            right: 50%;
+                            left: 47%;
+                            transform: translateY(0);
+                            input{
+                                display: inline;
+                                width: 3vw;
+                                height: 3vw;
+                                opacity: 0;
+                                cursor: pointer;
+                                z-index: 3;
+                                &:hover + img{
+                                    filter: brightness(1);
+                                }
+                                &:checked + img {
+                                    filter: brightness(1);
+                                    background-image: url(../assets/lover.svg);
+                                  }
+                            }
+                            img{
+                                display: inline;
+                                position: absolute; 
+                                width: 2vw;
+                                height: 2vw;
+                                background-repeat: no-repeat;
+                            }
+            
+                        }
+    
+                        .bookowner{font-size: 3vw;}
+                        .booknum{
+                            width: 50%;
+                            height: 100%;
+                            min-height: 3em;
+                            border: 1px solid;
+                            display: flex;
+                            justify-content: flex-end;
+                            border-radius: 5px;
+                            font-size: 2.3vw;
+                        }
+                        .contacts{
+                            justify-content: center;
+                            gap: 1em;
+    
+                            .chat{
+                                height: 7vw;
+                                background:rgb(221, 183, 11);
+                                padding: 0 1em;
+                                border-radius: 5px;
+                                filter: brightness(1.2);
+                                border: none;
+                                img{
+                                    width: 2.5vw;
+                               }
+                            }
+
+                            .report{
+                                height: 7vw;
+                                background:rgb(212, 91, 91);
+                                padding: 0 .5em;
+                                border-radius: 5px;
+                                filter: brightness(1.2);
+                                border: none;
+                                img{
+                                    width: 2.3vw;
+                               }
+                            }
+                        }
+    
+    
+                    }
+    
+                    .bookcover{
+                        height: auto;
+                        min-height: 10em;
+                        max-height: 75vw;
+                        flex: 1;
+                        z-index: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                        &::before{display: none;}
+                        &::after{display: none;}
+                    }
+                }
+    
+    
+                .lowerdetails{
+                    height: auto;
+                    min-height: 20vw;
+                    .bookdesc{
+                        font-size: 3.5vw;
+                    }
+                
+                
+                
+                    .ownerBooks{
+                        min-height: 51vw;
+                        grid-template-columns: repeat(auto-fill,minmax(40%,1fr));
+                        grid-auto-columns: minmax(40%,1fr);               
+                        .book{
+                
+                            &:hover .bookdetails{
+                                transform: translateY(120%);
+                            }
+                            .bookdetails{
+                                width: 100%;
+                                height:50%;
+                                padding: .2em 3vmin;
+                                align-self: flex-end;
+                                 &:hover{
+                                     transform: translateY(120%);
+                                 }
+                
+                                .bookname{font-size: 2.5vw}
+                               .love{
+                                width: 3vw;
+                                height: 3vw;
+                                margin: -2vmax 1vmin 0;
+                                position: relative;
+                                @media screen and(max-width:550px) {
+                                    margin-top: -1.2em;
+                                }
+                    
+                                input{
+                                    display: inline;
+                                    position: relative;
+                                    width: 3vw;
+                                    height: 3.1vw;
+                                }
+                                img{
+                                    width: 3vw;
+                                    height: 3vw;                
+                                    top: 0;
+                                    transform: translate(-100%,0vw);
+                                    @media screen and(max-width:490px) {
+                                        transform: translate(-100%,1vmax);
+                                    }
+                               }
+                
+                               }
+                               .bookgen{font-size: 1.5vw}
+                                .bookdesc{display: none;}
+                           }
+                       }
+                
+                
+                    }
+                
+                }
+           }
+
+        }
+    }
+}

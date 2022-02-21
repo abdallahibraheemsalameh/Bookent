@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Offside&display=swap');
+
+:root {
+  --bage: #ffd79a;
+  --cyan: #88c0c2;
+  --ntr: 'NTR', sans-serif;
+  --offside: 'Offside', cursive;
+}
+
+.themelight{
+  --black:#202020;
+  --back:#fafafa;
+  --white:#fff;
+  --white2:#fff;
+  --offwhite:#f7f7f7;
+  --trans:transparent;
+  --shadow:0 .37rem .9rem -3px rgb(0 0 0 / 20%);
+}
+.themedark{
+  --black:#fff;
+  --white:#202020;
+  --white2:#3d3d3d;
+  --back:#202020;
+  --offwhite:#3d3d3d;
+  --trans:#3d3d3d;
+  --shadow:0 .37rem .9rem -3px rgba(241, 241, 241, 0.644);
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: var(--ntr);
+}
+
+.container {
+  height: 130vh;
+  width: 50vw;
+  position: absolute;
+  top: 71%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: var(--white2);
+  border: none;
+  border-radius: 30px;
+  -webkit-box-shadow:var(--shadow);
+  box-shadow: var(--shadow);
+  padding: 2% 0;
+}
+
+.editForm {
+  position: relative;
+  width: 100%;
+  margin-top: -5%;
+  height: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1vw;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+}
+.editForm span {
+  color: var(--black);
+  margin-bottom: 0.5em;
+}
+.editForm .formInputs {
+  border: solid #929292 1px !important;
+  padding: 0.3em;
+}
+
+.editForm .formInputs:focus {
+  outline: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+
+.editForm .choosePicture__div {
+  height: 20%;
+  width: 60%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  text-align: center;
+}
+
+.editForm .choosePicture__div .photoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 28%;
+}
+
+.editForm .choosePicture__div .photoContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.editForm .choosePicture__div input[type='file'] {
+  display: none;
+}
+
+.editForm .choosePicture__div .customfileupload {
+  width: 65%;
+  color: var(--white);
+  margin: 0 auto;
+  padding: 4.5% 0;
+  cursor: pointer;
+  background-color: var(--cyan);
+  border-radius: 5px;
+}
+
+.editForm .choosePicture__div .chooseFileContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.editForm .fromInputs__div {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.editForm .fromInputs__div .input__div {
+  height: 20%;
+  width: 60%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+}
+
+.editForm .fromInputs__div .input__div span {
+  font-size: large;
+  width: 100%;
+  text-align: start;
+  margin-left: 2%;
+}
+
+.editForm .fromInputs__div .input__div input {
+  height: 45%;
+  border: solid var(--black) 1px;
+  border-radius: 10px;
+  font-family: 'Offside', cursive;
+}
+
+.editForm .fromInputs__div .input__div .input__phone {
+  width: 80%;
+}
+
+.editForm .fromInputs__div .input__div select {
+  height: 40%;
+  width: 40%;
+  border: solid #929292 1px;
+  border-radius: 10px;
+  font-family: 'Offside', cursive;
+  cursor: pointer;
+}
+
+.editForm .fromInputs__div .input__div select:focus {
+  outline: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+
+.editForm .fromInputs__div .submitButtons__div {
+  height: 10%;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-evenly;
+
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  text-align: center;
+}
+
+.editForm .fromInputs__div .submitButtons__div .submit__btn {
+  width: max-content;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffd79a;
+  color: var(--white);
+  font-family: 'Offside', cursive;
+  cursor: pointer;
+  font-size: 2vmin;
+  padding: 0 2vw;
+  text-align: center;
+}
+
+.editForm .fromInputs__div .submitButtons__div .submit__btn:hover {
+  background-color: #fdc46e;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.editForm .fromInputs__div .submitButtons__div .cancle__btn {
+  width: max-content;
+  border-radius: 5px;
+  border: none;
+  background-color: #c9c9c9;
+  color: var(--white);
+  font-family: 'Offside', cursive;
+  margin-left: 10%;
+  cursor: pointer;
+  font-size: 2vmin;
+  padding: 0 2.5vw;
+}
+
+.editForm .fromInputs__div .submitButtons__div .cancle__btn:hover {
+  background-color: gray;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 75%;
+  }
+  .container h2{
+    margin-bottom: 5%;
+  }
+  .editForm .choosePicture__div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 12% 0 8% 0;
+    width: 100%;
+  }
+  .editForm .choosePicture__div .photoContainer img {
+    margin-top: -10vmin;
+    width: 22vmin;
+    height: 22vmin;
+  }
+  .editForm .fromInputs__div .input__div {
+    width: 85%;
+  }
+  .editForm .fromInputs__div .input__div .input__phone {
+    width: 70%;
+  }
+  .editForm .fromInputs__div .input__div select {
+    width: 35%;
+    height: 4em;
+  }
+  .editForm .fromInputs__div .submitButtons__div {
+    width: 85%;
+    margin-left: 10%;
+    padding: 3%;
+  }
+  .editForm .fromInputs__div .submitButtons__div .submit__btn {
+    width: 30%;
+    height: 4em;
+  }
+  .editForm .fromInputs__div .submitButtons__div .cancle__btn {
+    width: 20%;
+    height: 4em;
+  }
+  .editForm .fromInputs__div .input__div input {
+    height: 5em;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 1vw 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .editForm .fromInputs__div .submitButtons__div .submit__btn {
+    font-size: 3vmin;
+  }
+  .editForm .fromInputs__div .submitButtons__div .cancle__btn {
+    font-size: 3vmin;
+  }
+  .submitButtons__div {
+    width: 85%;
+    margin-left: 10%;
+  }
+  .submitButtons__div .submit__btn {
+    width: 40% !important;
+  }
+  .submitButtons__div .cancle__btn {
+    width: 30% !important;
+  }
+}
+
+.h2 {
+  position: relative;
+  /* border: solid seagreen; */
+  height: 10%;
+  color: var(--black);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 8%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: var(--offside);
+}
+
+.err h5:not(:empty){
+  min-width: 100px;
+  position: absolute;
+  background-color: rgb(233, 117, 96);
+  padding: 2%;
+  margin: 0 8%;
+  text-align: left;
+  margin-top: 2vmin;
+  border-radius: .5em;
+}
+@media (max-width: 1024px) {
+.err h5:not(:empty){
+  margin: 0 auto;
+  width: max-content;
+  position: relative;
+}
+}
+.err img{margin:0 10px -5px 0;}

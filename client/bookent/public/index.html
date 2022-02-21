@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="pwa-icons/Frame 1-512.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#88C0C2" />
+  <meta name="theme-color" content="#88C0C2" />
+  <meta name="description" content="BOOKENT is a web application that aims to simplify the process of book loan between
+  readers who prefer to own the printed copy of books." />
+  <link rel="apple-touch-icon" href="pwa-icons/Frame 1-512.png" />
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="pwa-icons/Frame 1-72.png" />
+  <link rel="apple-touch-icon" href="pwa-icons/Frame 1-96.png" />
+  <link rel="apple-touch-icon" href="pwa-icons/Frame 1-128.png" />
+  <link rel="apple-touch-icon" href="pwa-icons/Frame 1-144.png" />
+  <link rel="apple-touch-icon" href="pwa-icons/Frame 1-152.png" />
+  <link rel="apple-touch-icon" href="pwa-icons/Frame 1-384.png" />
+  <link rel="apple-touch-icon" href="pwa-icons/Frame 1-512.png" />
+  <meta name="apple-mobile-web-app-status-bar" content="#000000" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <title>Bookent</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./serviceWorker.js').then(function (registration) {
+          console.log('Worker registration successful', registration.scope);
+
+
+          window.addEventListener('beforeinstallprompt', event => {
+            event.preventDefault();
+            var button = document.querySelector('button');
+            button.removeAttribute('hidden');
+            button.addEventListener('click', () => {
+              event.prompt();
+              button.setAttribute('disabled', true);
+            });
+          });
+
+        }, function (err) {
+          console.log('Worker registration failed', err);
+        }).catch(function (err) {
+          console.log(err);
+        });
+      });
+    } else {
+      console.log('Service Worker is not supported by browser.');
+    }
+  </script>
+</body>
+
+</html>

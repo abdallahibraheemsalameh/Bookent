@@ -1,0 +1,618 @@
+//************************************************************ Introduction ****************************************************************
+$Main-color: #ffd79a;
+$Secondry-color: #88c0c2;
+@mixin flex-rule($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin position-rule($position: relative, $width: auto, $height: auto) {
+  position: $position;
+  width: $width;
+  height: $height;
+}
+
+//index
+@import url('https://fonts.googleapis.com/css2?family=Offside&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Offside', cursive;
+  /* background-image: linear-gradient(
+    127deg,
+    rgb(230, 230, 230),
+    rgb(255, 255, 255)
+  ); */
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+
+
+
+
+//app
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* 
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+/* .App-link {
+  color: #61dafb;
+} */
+.hide {
+  display: none;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+.LogoHolder {
+  @include position-rule(relative, 45%, 10vh);
+  margin: 0 auto;
+  background: $Main-color;
+  border-bottom-right-radius: 300px;
+  border-bottom-left-radius: 300px;
+
+  @media (max-width: 520px) {
+    height: 7vh !important;
+    width: 60vw;
+  }
+
+  .logo {
+    @include position-rule(relative, 50%, 50%);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+  }
+}
+.introduction__container {
+  @include position-rule(absolute, 100%, 70%);
+  @include flex-rule(row, space-evenly, center);
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (max-width: 520px) {
+    display: flex;
+    flex-direction: column-reverse !important;
+    justify-content: space-between;
+    gap: 5%;
+    align-items: center;
+    height: 80%;
+  }
+
+  & .readMore__div {
+    border: none;
+    @media (max-width: 520px) {
+      order: 2 !important;
+      height: 55%;
+      width: 95% !important;
+      margin: 0;
+      padding:0 0 3% 3vw;
+    }
+
+    @include position-rule(relative, 43%, 88%);
+    background: $Main-color;
+    @include flex-rule(column, space-evenly, center);
+    border-top-right-radius: 350px;
+    margin-right: -5%;
+
+    & .readMore__header {
+      // border: solid cadetblue;
+
+      @media (max-width: 1310px) and (min-width: 1000px) {
+        font-size: 3vmin !important;
+      }
+
+      @media (max-width: 1000px) and (min-width: 520px) {
+        font-size: 3.5vmin !important;
+        margin-top: 5%;
+      }
+
+      @media (max-width: 520px) {
+        margin-left: -50% !important;
+        margin-top: 5%;
+      }
+
+      @media (max-width: 400px) {
+        margin-top: 10%;
+      }
+
+      @include flex-rule(column, center, center);
+
+      @include position-rule(relative, 80%, 20%);
+
+      margin-left: -35%;
+      font-size: 5vmin;
+      width: 50%;
+      margin-bottom: 5%;
+      align-items: flex-start;
+
+      & .readeMore__span {
+        position: relative;
+        left: 0%;
+      }
+      & .learnMore__span {
+        position: relative;
+        left: 35%;
+      }
+    }
+    & .readMore__P1 {
+      @media (max-width: 520px) {
+        font-size: 2.1vmin !important;
+        font-weight: 600;
+        margin-left: -10%;
+        height: 50%;
+      }
+      @media (max-width: 400px) {
+        height: 40%;
+
+        font-size: 2.5vmin !important;
+        line-height: 1.5;
+      }
+
+      font-size: 1.5vmin;
+      line-height: 2;
+      position: relative;
+      width: 80%;
+      left: -5%;
+
+      // border: solid red;
+    }
+    & .readMore__P2 {
+      font-size: 1.5vmin;
+      line-height: 2;
+      position: relative;
+      width: 80%;
+      height: auto;
+      left: -5%;
+      // border: solid red;
+
+      @media (max-width: 520px) {
+        font-size: 2.1vmin !important;
+        font-weight: 600;
+        // border: solid red;
+        margin-left: -10%;
+      }
+
+      @media (max-width: 400px) {
+        font-size: 2.5vmin !important;
+        line-height: 1.5;
+      }
+    }
+  }
+  & .joinNow__btn__div {
+    @include position-rule(relative, 11%, 16%);
+    left: 5.5%;
+
+    @media (min-width: 521px) {
+      width: 20%;
+      bottom: 5%;
+      align-self: flex-end;
+    }
+
+    @media (max-width: 520px) {
+      top: auto !important;
+      left: 0%;
+      width: 55% !important;
+      height: 13% !important;
+      order: 1 !important;
+      left: 0 !important;
+    }
+
+    & button {
+      @include position-rule(relative, 100%, 100%);
+      background: inherit;
+      background: linear-gradient(white, white) padding-box,
+        linear-gradient(to right, $Main-color, $Secondry-color) border-box;
+      border-radius: 10em;
+      border: 4px solid transparent;
+      cursor: pointer;
+      font-size: 3vmin;
+      color: $Secondry-color;
+      font-family: inherit;
+    }
+  }
+}
+.wave {
+  @include position-rule(absolute, 100vw, 30%);
+  position: fixed;
+  bottom: 0;
+  z-index: -3;
+  @media (max-width: 520px) {
+    height: 10%;
+  }
+}
+.manWithChair__div__intro {
+  @include position-rule(relative, 38vw, 70vh);
+
+  @media (max-width: 520px) {
+    order: 3 !important;
+    width: 100%;
+    height: 30%;
+  }
+}
+.manWithChair__intro {
+  @include position-rule(relative, 100%, 100%);
+}
+
+//************************************************************ Log in  ****************************************************************
+//************************************************************ Log in  ****************************************************************
+//************************************************************ Log in  ****************************************************************
+//************************************************************ Log in  ****************************************************************
+
+$Container-background: whitesmoke;
+$logoContainer-background: #ffd79a;
+$login--btn: inherit;
+$singUp--btn: rgb(235, 235, 235);
+
+@mixin mainContainer {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 55%;
+  transform: translateY(-50%);
+  padding: 1%;
+}
+
+@mixin formContainer {
+  background-color: $Container-background;
+  z-index: 1;
+  margin-right: 0rem;
+  width: 50%;
+  height: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 58px;
+  box-shadow: 5px 5px 15px 2px #88888865;
+  margin-right: -6.5%;
+}
+
+@mixin LogSignForm {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: inherit;
+}
+
+@mixin labelName {
+  position: relative;
+  left: -27%;
+  bottom: 0.5rem;
+  font-size: 3.2vmin;
+  letter-spacing: 0.1rem;
+}
+
+@mixin labels {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  height: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin formInputs {
+  width: 90%;
+  height: 55%;
+  border: solid black 0.8px;
+  border-radius: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3%;
+}
+@mixin formSubmit {
+  width: 20%;
+  height: 12%;
+  position: relative;
+
+  border: solid black 0.8px;
+  background-color: $login--btn;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Offside', cursive;
+  font-size: 3.3vmin;
+}
+@mixin signup-div {
+  height: 100%;
+  width: 30%;
+  border: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+@mixin signUpbtn {
+  height: 100%;
+  width: 100%;
+
+  background-color: $singUp--btn;
+  // background-color: rgb(103, 159, 161);
+
+  border: inherit;
+  border-radius: inherit;
+  cursor: pointer;
+  font-family: 'Offside', cursive;
+  font-size: 2.2vmin;
+  padding: 1em
+}
+
+.Main__Container {
+  @include mainContainer();
+  @media (max-width: 1024px) {
+    flex-direction: column !important;
+  }
+  @media (max-width: 1024px) and (min-width:768px) {
+    top: 60%;
+  }
+  .headerLogin {
+    height: 10%;
+    position: relative;
+    top: -5%;
+    h2 {
+      text-align: center;
+      font-size: 5vmin;
+      letter-spacing: 0.1rem;
+      word-spacing: 0.1rem;
+    }
+  }
+
+  .Form__Container {
+    @include formContainer();
+
+    @media (max-width: 1024px) {
+      width: 85% !important;
+      // height: 100vh !important;
+      // padding-top: 10%;
+      border-radius: 30px !important;
+
+      flex-direction: column !important;
+      margin: 0;
+    }
+    .logIn__form {
+      @include LogSignForm();
+      gap: 8%;
+      .labelName {
+        @include labelName();
+      }
+
+      .labels {
+        @include labels();
+      }
+      .formInputs {
+        @include formInputs();
+        &:focus {
+          outline: none;
+        }
+        font-family: 'Offside', cursive;
+        font-size: 3vmin;
+      }
+      .formSubmit {
+        left: 65%;
+        @include formSubmit();
+      }
+    }
+    .signUp__div {
+      @include signup-div();
+
+      @media (max-width: 1024px) {
+        height: 15%;
+        width: 100%;
+        border: none !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: inherit;
+        border-bottom-right-radius: inherit;
+        border-bottom-left-radius: inherit;
+      }
+
+      .signUp__btn {
+        @include signUpbtn();
+
+        & .dontHavean__spam {
+          position: relative;
+          top: -10%;
+          // border: solid green;
+        }
+        & .signUp__span {
+          position: relative;
+          top: 10%;
+        }
+      }
+    }
+  }
+}
+.manWithChair__div {
+  width: 38vw;
+  height: 70vh;
+  @media (max-width: 1024px) {
+    height: auto;
+    width: 20vmax;
+    position: relative;
+  }
+  .manWithChair {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+}
+//************************************************************ Sign Up  ****************************************************************
+//************************************************************ Sign Up  ****************************************************************
+//************************************************************ Sign Up  ****************************************************************
+
+.Main__Container__SignUp {
+  input[type='number'] {
+    -moz-appearance:textfield;
+}
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+  @include mainContainer();
+  @media (max-width: 1024px) {
+    flex-direction: column !important;
+  }
+  @media (max-width: 1024px) and (min-width:768px) {
+    top: 63%;
+  }
+  .headerSignUp {
+    height: 10%;
+    position: relative;
+    h2 {
+      text-align: center;
+      font-size: 5vmin;
+      letter-spacing: 0.1rem;
+      word-spacing: 0.1rem;
+    }
+  }
+
+  .Form__Container__SignUp {
+    @include formContainer();
+    height: 100%;
+    @media (max-width: 1024px) {
+      width: 85% !important;
+
+      border-radius: 30px !important;
+
+      flex-direction: column !important;
+      margin: 0;
+    }
+    .SignUp__form {
+      @include LogSignForm();
+      position: relative;
+      gap: 2vw;
+      top: 8%;
+      .labelName {
+        @include labelName();
+        &.pp {
+          position: relative;
+          left: -21%;
+        }
+        &.ppp {
+          position: relative;
+          left: -32%;
+        }
+      }
+
+      .labels__SignUp {
+        @include labels();
+      }
+
+      .formInputs__SignUp {
+        @include formInputs();
+        &:focus {
+          outline: none;
+        }
+        font-family: 'Offside', cursive;
+        font-size: 3vmin;
+        &.country {
+          width: 40%;
+          height: max-content;
+          position: relative;
+          left: -17%;
+        }
+      }
+      option {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .formSubmit__SignUp {
+        @include formSubmit();
+        top: -15%;
+        left: 65%;
+        padding: .5em 0
+      }
+    }
+    .signUp__div {
+      @include signup-div();
+
+      @media (max-width: 1024px) {
+        height: 15%;
+        width: 100%;
+        margin-top: 1em;
+        border: none !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: inherit;
+        border-bottom-right-radius: inherit;
+        border-bottom-left-radius: inherit;
+      }
+
+      .signUp__btn {
+        @include signUpbtn();
+        & .dontHavean__spam {
+          position: relative;
+          top: -10%;
+          // border: solid green;
+        }
+        & .signUp__span {
+          position: relative;
+          top: 10%;
+        }
+      }
+    }
+  }
+}
+.manWithChair__div__SignUp {
+  width: 38vw;
+  @media (max-width: 1024px) {
+    height: auto;
+    width:20vmax;
+    position: relative;
+    margin-top: 2em;
+  }
+  .manWithChair__SignUp {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+}
+.err h5:not(:empty){
+  background-color: rgb(233, 117, 96);
+  padding: 2%;
+  margin: 0 10%;
+  text-align: left;
+  margin-top: -5vmin;
+  border-radius: .5em;
+  img{margin:0 10px -5px 0;}
+}
